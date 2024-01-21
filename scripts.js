@@ -19,7 +19,7 @@ let editId = "";
 // ****** EVENT LISTENERS **********
 // add eventlistener to submit button on our form 
 
-form.addEventListener("submit" ,addItem )
+form.addEventListener("submit" ,addItem );
 
 // ****** FUNCTIONS **********
 // add functions then reference them in the eventlistener
