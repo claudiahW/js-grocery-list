@@ -27,12 +27,18 @@ function addItem(e){
     e.preventDefault();
     const value = grocery.value;
     const id = new Date().getTime().toString();
-
     // set up loop to iterate through three options once submit button is clicked
+    if(value && !editFlag){
 
-    if(){}
-    else if(){}
-    else{}
+    } //here if value is not equal to empty string and we do not edit then some code will run 
+    else if( value && editFlag){
+
+    } //here though if the value is still not equal to an empty string but i do edit some function will happen
+    else{
+        alert.textContent = "empty value";
+        alert.classList.add("alert-danger");
+
+    }
 } 
 
 // ****** LOCAL STORAGE **********
