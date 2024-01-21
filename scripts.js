@@ -27,6 +27,12 @@ function addItem(e){
     e.preventDefault();
     const value = grocery.value;
     const id = new Date().getTime().toString();
+
+    // set up loop to iterate through three options once submit button is clicked
+
+    if(){}
+    else if(){}
+    else{}
 } 
 
 // ****** LOCAL STORAGE **********
