@@ -23,6 +23,9 @@ form.addEventListener("submit" ,addItem )
 
 // ****** FUNCTIONS **********
 // add functions then reference them in the eventlistener
+function addItem(e){
+    e.preventDefault();
+} 
 
 // ****** LOCAL STORAGE **********
 
