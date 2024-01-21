@@ -35,11 +35,14 @@ function addItem(e){
 
     } //here though if the value is still not equal to an empty string but i do edit some function will happen
     else{
-        alert.textContent = "empty value";
-        alert.classList.add("alert-danger");
-
+       displayAlert("please enter value", "danger");
     }
 } 
+// display alert 
+function displayAlert(text,action){
+    alert.textContent = text;
+    alert.classList.add(`alert-${action}`);
+}
 
 // ****** LOCAL STORAGE **********
 
