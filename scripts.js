@@ -10,6 +10,11 @@ const list = document.querySelector(".grocery-list");
 const clearBtn = document.querySelector(".clear-btn");
 
 // edit option
+// set up variables to be used later
+
+let editElement;
+let editFlag = false;
+let editId = "";
 
 // ****** EVENT LISTENERS **********
 
