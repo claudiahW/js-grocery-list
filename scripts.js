@@ -23,6 +23,7 @@ form.addEventListener("submit" ,addItem);
 // clear items
 clearBtn.addEventListener("click", clearItems);
 
+const deleteBtn = document.querySelector(".delete-btn");
 
 // ****** FUNCTIONS **********
 // add functions then reference them in the eventlistener
@@ -48,6 +49,11 @@ function addItem(e){
             <i class="fas fa-trash"></i>
         </button>
     </div>`;
+    const deleteBtn = element.querySelector(".delete-btn");
+    const editBtn = element.querySelector(".edit-btn");
+    deleteBtn.addEventListener("click", deleteItem);
+    editBtn.addEventListener("click", editItem);
+
     // append child 
     list.appendChild(element);
 
@@ -59,6 +65,8 @@ function addItem(e){
 
     // add to local storage
     addToLocalStorage(id,value);
+    // edit button 
+    // delete button
 
     // set back to default
     setBackToDefault();
@@ -92,6 +100,7 @@ function displayAlert(text,action){
     }
     container.classList.remove("show-container");
     displayAlert("empty list", "danger");
+    setBackToDefault();
  };
 //set back to default 
 function setBackToDefault(){
