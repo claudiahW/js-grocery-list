@@ -56,7 +56,9 @@ function addItem(e){
 
     // add to local storage
     addToLocalStorage(id,value);
-    
+
+    // set back to default
+    setBackToDefault();
 
     } else if( value && editFlag){
 
@@ -76,7 +78,17 @@ function displayAlert(text,action){
         alert.classList.remove(`alert-${action}`);
     },1000);
 }
-
+//set back to default 
+function setBackToDefault(){
+    grocery.value= "";
+    editFlag = false;
+    editID = "";
+    submitBtn.textContent = "submit";
+};
 // ****** LOCAL STORAGE **********
+function addToLocalStorage(id,value){
+}
+
+
 
 // ****** SETUP ITEMS **********
