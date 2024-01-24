@@ -65,8 +65,27 @@ function addItem(e){
 
     // add to local storage
     addToLocalStorage(id,value);
-    // edit button 
-    // delete button
+    
+     // delete function
+     function deleteItem(e){
+      const element = e.currentTarget.parentElement.parentElement;
+      list.removeChild(element);
+      if(list.children.length === 0){
+        container.classList.remove("show-container");
+      }
+      displayAlert("item removed", "danger");
+      setBackToDefault
+      ();
+
+    //   remove from local storage
+        // removeFromLocalStorage(id);
+     };
+    // edit function
+    function editItem(){
+
+    };
+
+   
 
     // set back to default
     setBackToDefault();
