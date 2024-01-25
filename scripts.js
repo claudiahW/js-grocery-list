@@ -14,7 +14,7 @@ const clearBtn = document.querySelector(".clear-btn");
 
 let editElement;
 let editFlag = false;
-let editId = "";
+let editID = "";
 
 // ****** EVENT LISTENERS **********
 // add eventlistener to submit button on our form 
@@ -69,20 +69,28 @@ function addItem(e){
      // delete function
      function deleteItem(e){
       const element = e.currentTarget.parentElement.parentElement;
+      const id = element.dataset.id;
       list.removeChild(element);
       if(list.children.length === 0){
         container.classList.remove("show-container");
       }
       displayAlert("item removed", "danger");
-      setBackToDefault
-      ();
+      setBackToDefault();
 
     //   remove from local storage
         // removeFromLocalStorage(id);
      };
     // edit function
-    function editItem(){
+    function editItem(e){
+        const element = e.currentTarget.parentElement.parentElement;
 
+        // set edit item 
+        editElement = e.currentTarget.parentElement.previousElementSibling;
+        // set form value 
+        grocery.value = editElement.innerHTML;
+        editFlag = true;
+        editID = element.dataset.id;
+        submitBtn.textContent = "edit";
     };
 
    
@@ -91,7 +99,11 @@ function addItem(e){
     setBackToDefault();
 
     } else if( value && editFlag){
-
+      editElement.innerHTML = value;
+      displayAlert("value changed", "success");
+    //   edit local storage
+    editLocalStorage(editID,value);
+      setBackToDefault();
     } 
     else{
        displayAlert("please enter value", "danger");
@@ -133,7 +145,8 @@ function setBackToDefault(){
 // ****** LOCAL STORAGE **********
 function addToLocalStorage(id,value){
 }
+function removeFromLocalStorage(id){
 
-
-
+}
+function editLocalStorage(id, value){}
 // ****** SETUP ITEMS **********
